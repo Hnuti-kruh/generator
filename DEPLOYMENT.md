@@ -33,9 +33,10 @@
 2. Vyberte `Repository` jako build method
 3. Vyplňte:
    - **Name**: `graphics-generator`
-   - **Repository URL**: vaše Git URL (s autentizací)
+   - **Repository URL**: `https://github.com/Hnuti-kruh/generator.git`
    - **Repository reference**: `refs/heads/main` (nebo jiná branch)
    - **Compose path**: `docker-compose.yml`
+4. **Důležité**: Ujistěte se, že máte zaškrtnuté `Build` pokud je dostupné
 
 ### 3. Konfigurace environment proměnných
 V Portainer stacku můžete nastavit:
