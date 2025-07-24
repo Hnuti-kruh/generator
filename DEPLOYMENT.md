@@ -68,6 +68,11 @@ Po deployu:
 
 ## Troubleshooting
 
+### Build selhává s "pull access denied" chybou
+- **Problém**: Portainer se snaží pullnout image místo buildování
+- **Řešení**: V docker-compose.yml je odebráno `image:` pole, zůstává jen `build:`
+- **Ověření**: Docker compose file by měl obsahovat jen `build:` sekci bez `image:` pro lokální build
+
 ### Build selhává s "npm ci" chybou
 - **Problém**: `npm ci` selhává s exit code 1
 - **Řešení**: Ujistěte se, že `package-lock.json` je commitnutý do repository

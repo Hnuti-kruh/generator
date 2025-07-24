@@ -5,7 +5,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: graphics-generator:latest
     container_name: graphics-generator-app
     restart: unless-stopped
     expose:
