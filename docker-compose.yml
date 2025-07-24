@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  graphics-generator:
+    image: graphics-generator:latest
+    container_name: graphics-generator-app
+    restart: unless-stopped
+    expose:
+      - "80"  # Exponujeme port 80 pro nginx-proxy
+    environment:
+      - NODE_ENV=production
+      # --- proxy nastavení ---
+      - VIRTUAL_HOST=generator.hnutikruh.cz
+      - VIRTUAL_PORT=80
+      - VIRTUAL_PROTO=http
+      # Pokud používáte letsencrypt companion:
+      - LETSENCRYPT_HOST=generator.hnutikruh.cz
+      - LETSENCRYPT_EMAIL=mtk@hnutikruh.cz
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:80/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - internal
+      - nginx-proxy
+
+networks:
+  internal:
+  nginx-proxy:
+    external:
+      name: nginx-proxy
