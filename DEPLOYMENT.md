@@ -49,8 +49,10 @@ VITE_API_URL=https://your-api.com  # pokud používáte API
 Aplikace je nakonfigurována pro použití s existujícím nginx-proxy:
 - Používá `nginx-proxy` external network
 - VIRTUAL_HOST: `generator.hnutikruh.cz`
+- VIRTUAL_PORT: `3000` (Node.js serve server)
 - Let's Encrypt SSL certifikát bude automaticky vygenerován
 - Žádné manuální mapování portů není potřeba
+- **Poznámka**: Aplikace používá Node.js `serve` místo vlastního nginx serveru pro kompatibilitu s nginx-proxy
 
 ### 5. SSL certifikát
 Let's Encrypt companion automaticky:
@@ -61,8 +63,8 @@ Let's Encrypt companion automaticky:
 ## Testování
 Po deployu:
 1. Zkontrolujte logy: `Containers` → `graphics-generator-app` → `Logs`
-2. Otestujte health check: `http://generator.hnutikruh.cz/health`
-3. Aplikace bude dostupná na: `https://generator.hnutikruh.cz` (HTTPS automaticky díky Let's Encrypt)
+2. Otestujte dostupnost: `https://generator.hnutikruh.cz`
+3. Aplikace běží na Node.js serve serveru na portu 3000, ale je dostupná přes nginx-proxy na HTTPS
 
 ## Troubleshooting
 

@@ -19,17 +19,26 @@ COPY . .
 # Build aplikace
 RUN npm run build
 
-# Production stage
-FROM nginx:alpine AS production-stage
+# Production stage - použijeme Node.js serve místo nginx
+FROM node:18-alpine AS production-stage
 
-# Kopírování custom nginx konfigurace
-COPY nginx.conf /etc/nginx/nginx.conf
+# Instalace serve pro statické soubory
+RUN npm install -g serve
 
-# Kopírování build výstupu do nginx
-COPY --from=build-stage /app/dist /usr/share/nginx/html
+# Vytvoření non-root uživatele
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nextjs -u 1001
 
-# Expose port 80
-EXPOSE 80
+# Kopírování build výstupu
+COPY --from=build-stage /app/dist /app
+WORKDIR /app
 
-# Spuštění nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Změna vlastnictví souborů
+RUN chown -R nextjs:nodejs /app
+USER nextjs
+
+# Expose port 3000 (serve default port)
+EXPOSE 3000
+
+# Spuštění serve s SPA supportem
+CMD ["serve", "-s", ".", "-l", "3000"]

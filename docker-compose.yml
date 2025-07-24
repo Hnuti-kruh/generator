@@ -9,18 +9,18 @@ services:
     container_name: graphics-generator-app
     restart: unless-stopped
     expose:
-      - "80"  # Exponujeme port 80 pro nginx-proxy
+      - "3000"  # Exponujeme port 3000 pro nginx-proxy (serve default port)
     environment:
       - NODE_ENV=production
       # --- proxy nastavení ---
       - VIRTUAL_HOST=generator.hnutikruh.cz
-      - VIRTUAL_PORT=80
+      - VIRTUAL_PORT=3000
       - VIRTUAL_PROTO=http
       # Pokud používáte letsencrypt companion:
       - LETSENCRYPT_HOST=generator.hnutikruh.cz
       - LETSENCRYPT_EMAIL=mtk@hnutikruh.cz
     healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:80/health"]
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000"]
       interval: 30s
       timeout: 10s
       retries: 3
