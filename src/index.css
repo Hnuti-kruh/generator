@@ -1,0 +1,1764 @@
+/* === HNUTÍ KRUH - CSS RESET A ZÁKLADNÍ STYLY === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #2d3748;
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* === HNUTÍ KRUH BAREVNÁ PALETA === */
+:root {
+    /* Primární barvy */
+    --kruh-primary: #2b5797;
+    --kruh-primary-light: #4a7bc8;
+    --kruh-primary-dark: #1e3f6f;
+
+    /* Sekundární barvy */
+    --kruh-accent: #e53e3e;
+    --kruh-accent-light: #fc8181;
+    --kruh-accent-dark: #c53030;
+
+    /* Lososová barva */
+    --kruh-salmon: #fa8072;
+    --kruh-salmon-light: #ffa07a;
+    --kruh-salmon-dark: #e9967a;
+
+    /* Neutrální barvy */
+    --kruh-gray-50: #f7fafc;
+    --kruh-gray-100: #edf2f7;
+    --kruh-gray-200: #e2e8f0;
+    --kruh-gray-300: #cbd5e0;
+    --kruh-gray-400: #a0aec0;
+    --kruh-gray-500: #718096;
+    --kruh-gray-600: #4a5568;
+    --kruh-gray-700: #2d3748;
+    --kruh-gray-800: #1a202c;
+    --kruh-gray-900: #171923;
+
+    /* Text barvy */
+    --kruh-text-primary: #2d3748;
+    --kruh-text-secondary: #4a5568;
+    --kruh-text-muted: #718096;
+
+    /* Pozadí */
+    --kruh-bg-primary: #ffffff;
+    --kruh-bg-secondary: #f7fafc;
+    --kruh-bg-accent: #edf2f7;
+
+    /* Úspěch, varování, chyba */
+    --kruh-success: #38a169;
+    --kruh-warning: #d69e2e;
+    --kruh-error: #e53e3e;
+}
+
+/* === GAP UTILITY CLASSES === */
+.gap-1 {
+    gap: 0.25rem;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+.gap-3 {
+    gap: 0.75rem;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+.gap-5 {
+    gap: 1.25rem;
+}
+
+.gap-6 {
+    gap: 1.5rem;
+}
+
+.gap-8 {
+    gap: 2rem;
+}
+
+/* === GRID UTILITIES === */
+.grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.col-span-1 {
+    grid-column: span 1 / span 1;
+}
+
+.col-span-2 {
+    grid-column: span 2 / span 2;
+}
+
+.col-span-3 {
+    grid-column: span 3 / span 3;
+}
+
+.col-span-4 {
+    grid-column: span 4 / span 4;
+}
+
+/* === SPACING UTILITIES === */
+.m-0 {
+    margin: 0;
+}
+
+.m-1 {
+    margin: 0.25rem;
+}
+
+.m-2 {
+    margin: 0.5rem;
+}
+
+.m-3 {
+    margin: 0.75rem;
+}
+
+.m-4 {
+    margin: 1rem;
+}
+
+.m-5 {
+    margin: 1.25rem;
+}
+
+.m-6 {
+    margin: 1.5rem;
+}
+
+.m-8 {
+    margin: 2rem;
+}
+
+.m-12 {
+    margin: 3rem;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.mt-1 {
+    margin-top: 0.25rem;
+}
+
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.mt-3 {
+    margin-top: 0.75rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.mt-5 {
+    margin-top: 1.25rem;
+}
+
+.mt-6 {
+    margin-top: 1.5rem;
+}
+
+.mt-8 {
+    margin-top: 2rem;
+}
+
+.mt-12 {
+    margin-top: 3rem;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-1 {
+    margin-bottom: 0.25rem;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-3 {
+    margin-bottom: 0.75rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-5 {
+    margin-bottom: 1.25rem;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+.ml-0 {
+    margin-left: 0;
+}
+
+.ml-1 {
+    margin-left: 0.25rem;
+}
+
+.ml-2 {
+    margin-left: 0.5rem;
+}
+
+.ml-3 {
+    margin-left: 0.75rem;
+}
+
+.ml-4 {
+    margin-left: 1rem;
+}
+
+.ml-5 {
+    margin-left: 1.25rem;
+}
+
+.ml-6 {
+    margin-left: 1.5rem;
+}
+
+.ml-8 {
+    margin-left: 2rem;
+}
+
+.ml-12 {
+    margin-left: 3rem;
+}
+
+.mr-0 {
+    margin-right: 0;
+}
+
+.mr-1 {
+    margin-right: 0.25rem;
+}
+
+.mr-2 {
+    margin-right: 0.5rem;
+}
+
+.mr-3 {
+    margin-right: 0.75rem;
+}
+
+.mr-4 {
+    margin-right: 1rem;
+}
+
+.mr-5 {
+    margin-right: 1.25rem;
+}
+
+.mr-6 {
+    margin-right: 1.5rem;
+}
+
+.mr-8 {
+    margin-right: 2rem;
+}
+
+.mx-0 {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.mx-1 {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+
+.mx-2 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.mx-3 {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+}
+
+.mx-4 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.my-0 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.my-1 {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.my-2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.my-4 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.p-1 {
+    padding: 0.25rem;
+}
+
+.p-2 {
+    padding: 0.5rem;
+}
+
+.p-3 {
+    padding: 0.75rem;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.p-5 {
+    padding: 1.25rem;
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.p-8 {
+    padding: 2rem;
+}
+
+.pl-0 {
+    padding-left: 0;
+}
+
+.pl-1 {
+    padding-left: 0.25rem;
+}
+
+.pl-2 {
+    padding-left: 0.5rem;
+}
+
+.pl-3 {
+    padding-left: 0.75rem;
+}
+
+.pl-4 {
+    padding-left: 1rem;
+}
+
+.pl-5 {
+    padding-left: 1.25rem;
+}
+
+.pl-6 {
+    padding-left: 1.5rem;
+}
+
+.pl-8 {
+    padding-left: 2rem;
+}
+
+.pr-0 {
+    padding-right: 0;
+}
+
+.pr-1 {
+    padding-right: 0.25rem;
+}
+
+.pr-2 {
+    padding-right: 0.5rem;
+}
+
+.pr-3 {
+    padding-right: 0.75rem;
+}
+
+.pr-4 {
+    padding-right: 1rem;
+}
+
+.pr-5 {
+    padding-right: 1.25rem;
+}
+
+.pr-6 {
+    padding-right: 1.5rem;
+}
+
+.pr-8 {
+    padding-right: 2rem;
+}
+
+.pt-0 {
+    padding-top: 0;
+}
+
+.pt-1 {
+    padding-top: 0.25rem;
+}
+
+.pt-2 {
+    padding-top: 0.5rem;
+}
+
+.pt-3 {
+    padding-top: 0.75rem;
+}
+
+.pt-4 {
+    padding-top: 1rem;
+}
+
+.pt-6 {
+    padding-top: 1.5rem;
+}
+
+.pt-8 {
+    padding-top: 2rem;
+}
+
+.pb-0 {
+    padding-bottom: 0;
+}
+
+.pb-1 {
+    padding-bottom: 0.25rem;
+}
+
+.pb-2 {
+    padding-bottom: 0.5rem;
+}
+
+.pb-3 {
+    padding-bottom: 0.75rem;
+}
+
+.pb-4 {
+    padding-bottom: 1rem;
+}
+
+.pb-6 {
+    padding-bottom: 1.5rem;
+}
+
+.pb-8 {
+    padding-bottom: 2rem;
+}
+
+.px-0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.px-1 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+
+.px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.py-0 {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.py-7 {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+}
+
+/* === HEIGHT UTILITIES === */
+.h-0 {
+    height: 0;
+}
+
+.h-1 {
+    height: 0.25rem;
+}
+
+.h-2 {
+    height: 0.5rem;
+}
+
+.h-3 {
+    height: 0.75rem;
+}
+
+.h-4 {
+    height: 1rem;
+}
+
+.h-5 {
+    height: 1.25rem;
+}
+
+.h-6 {
+    height: 1.5rem;
+}
+
+.h-8 {
+    height: 2rem;
+}
+
+.h-10 {
+    height: 2.5rem;
+}
+
+.h-12 {
+    height: 3rem;
+}
+
+/* === DISPLAY UTILITIES === */
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.inline {
+    display: inline;
+}
+
+.flex {
+    display: flex;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.hidden {
+    display: none;
+}
+
+/* === FLEX UTILITIES === */
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-start {
+    align-items: flex-start;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.items-end {
+    align-items: flex-end;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.flex-shrink {
+    flex-shrink: 1;
+}
+
+.flex-shrink-0 {
+    flex-shrink: 0;
+}
+
+.shrink-0 {
+    flex-shrink: 0;
+}
+
+.shrink {
+    flex-shrink: 1;
+}
+
+/* === WIDTH & HEIGHT === */
+.w-0 {
+    width: 0;
+}
+
+.w-1 {
+    width: 0.25rem;
+}
+
+.w-2 {
+    width: 0.5rem;
+}
+
+.w-3 {
+    width: 0.75rem;
+}
+
+.w-4 {
+    width: 1rem;
+}
+
+.w-5 {
+    width: 1.25rem;
+}
+
+.w-6 {
+    width: 1.5rem;
+}
+
+.w-8 {
+    width: 2rem;
+}
+
+.w-10 {
+    width: 2.5rem;
+}
+
+.w-12 {
+    width: 3rem;
+}
+
+.w-16 {
+    width: 4rem;
+}
+
+.w-20 {
+    width: 5rem;
+}
+
+.w-24 {
+    width: 6rem;
+}
+
+.w-32 {
+    width: 8rem;
+}
+
+.w-40 {
+    width: 10rem;
+}
+
+.w-48 {
+    width: 12rem;
+}
+
+.w-56 {
+    width: 14rem;
+}
+
+.w-64 {
+    width: 16rem;
+}
+
+.w-72 {
+    width: 18rem;
+}
+
+.w-80 {
+    width: 20rem;
+}
+
+.w-96 {
+    width: 24rem;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.w-auto {
+    width: auto;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.h-auto {
+    height: auto;
+}
+
+/* === TYPOGRAPHY === */
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-xs {
+    font-size: 0.75rem;
+    line-height: 1.4;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.text-base {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.text-3xl {
+    font-size: 1.875rem;
+    line-height: 1.4;
+}
+
+.text-4xl {
+    font-size: 2.25rem;
+    line-height: 1.3;
+}
+
+.font-light {
+    font-weight: 300;
+}
+
+.font-normal {
+    font-weight: 400;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+/* === HNUTÍ KRUH HEADING STYLES === */
+.head-primary {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: var(--kruh-primary);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.head-alt-md {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--kruh-text-primary);
+    line-height: 1.3;
+}
+
+.head-alt-lg {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--kruh-primary);
+    line-height: 1.2;
+}
+
+.head-alt-xl {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--kruh-primary);
+    line-height: 1.1;
+}
+
+/* === HNUTÍ KRUH COLOR UTILITIES === */
+.text-primary {
+    color: var(--kruh-primary);
+}
+
+.text-primary-light {
+    color: var(--kruh-primary-light);
+}
+
+.text-primary-dark {
+    color: var(--kruh-primary-dark);
+}
+
+.text-accent {
+    color: var(--kruh-accent);
+}
+
+.text-salmon {
+    color: var(--kruh-salmon);
+}
+
+.text-salmon-light {
+    color: var(--kruh-salmon-light);
+}
+
+.text-salmon-dark {
+    color: var(--kruh-salmon-dark);
+}
+
+.text-gray-700 {
+    color: var(--kruh-gray-700);
+}
+
+.text-gray-600 {
+    color: var(--kruh-gray-600);
+}
+
+.text-gray-500 {
+    color: var(--kruh-gray-500);
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.bg-primary {
+    background-color: var(--kruh-primary);
+}
+
+.bg-primary-light {
+    background-color: var(--kruh-primary-light);
+}
+
+.bg-accent {
+    background-color: var(--kruh-accent);
+}
+
+.bg-salmon {
+    background-color: var(--kruh-salmon);
+}
+
+.bg-salmon-light {
+    background-color: var(--kruh-salmon-light);
+}
+
+.bg-salmon-dark {
+    background-color: var(--kruh-salmon-dark);
+}
+
+.bg-white {
+    background-color: var(--kruh-bg-primary);
+}
+
+.bg-gray-50 {
+    background-color: var(--kruh-gray-50);
+}
+
+.bg-gray-100 {
+    background-color: var(--kruh-gray-100);
+}
+
+.bg-gray-200 {
+    background-color: var(--kruh-gray-200);
+}
+
+/* === BORDER UTILITIES === */
+.border {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.border-0 {
+    border-width: 0;
+}
+
+.border-2 {
+    border-width: 2px;
+}
+
+.border-primary {
+    border-color: var(--kruh-primary);
+}
+
+.border-gray-200 {
+    border-color: var(--kruh-gray-200);
+}
+
+.border-gray-300 {
+    border-color: var(--kruh-gray-300);
+}
+
+.rounded {
+    border-radius: 0.375rem;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+/* === POSITION UTILITIES === */
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.static {
+    position: static;
+}
+
+/* === CURSOR === */
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* === HNUTÍ KRUH ICON STYLES === */
+[class*="ico--"]:before,
+[class^="ico--"]:before {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    display: inline-block;
+    margin-right: 0.5rem;
+    color: var(--kruh-primary);
+    font-size: 1rem;
+}
+
+.ico--cog:before {
+    content: "⚙️";
+}
+
+.ico--settings:before {
+    content: "⚙️";
+}
+
+.ico--gear:before {
+    content: "⚙️";
+}
+
+.ico--download:before {
+    content: "⬇️";
+}
+
+.ico--upload:before {
+    content: "⬆️";
+}
+
+.ico--plus:before {
+    content: "➕";
+}
+
+.ico--minus:before {
+    content: "➖";
+}
+
+.ico--close:before {
+    content: "❌";
+}
+
+.ico--check:before {
+    content: "✅";
+}
+
+.ico--circle:before {
+    content: "⭕";
+}
+
+.ico--circle-filled:before {
+    content: "🔴";
+}
+
+.ico--edit:before {
+    content: "✏️";
+}
+
+.ico--delete:before {
+    content: "🗑️";
+}
+
+.ico--save:before {
+    content: "💾";
+}
+
+.ico--home:before {
+    content: "🏠";
+}
+
+.ico--user:before {
+    content: "👤";
+}
+
+.ico--mail:before {
+    content: "📧";
+}
+
+.ico--phone:before {
+    content: "📞";
+}
+
+.ico--link:before {
+    content: "🔗";
+}
+
+.ico--search:before {
+    content: "🔍";
+}
+
+.ico--filter:before {
+    content: "🔽";
+}
+
+.ico--menu:before {
+    content: "☰";
+}
+
+.ico--arrow-left:before {
+    content: "◀️";
+}
+
+.ico--arrow-right:before {
+    content: "▶️";
+}
+
+.ico--arrow-up:before {
+    content: "🔼";
+}
+
+.ico--arrow-down:before {
+    content: "🔽";
+}
+
+/* === HNUTÍ KRUH BUTTON STYLES === */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #ffffff;
+    background-color: var(--kruh-salmon);
+    border: 2px solid var(--kruh-salmon);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background-color: var(--kruh-salmon-dark);
+    border-color: var(--kruh-salmon-dark);
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn--outline {
+    background-color: transparent;
+    color: var(--kruh-salmon);
+    border-color: var(--kruh-salmon);
+}
+
+.btn--outline:hover {
+    background-color: var(--kruh-salmon);
+    color: #ffffff;
+}
+
+.btn--accent {
+    background-color: var(--kruh-accent);
+    border-color: var(--kruh-accent);
+}
+
+.btn--accent:hover {
+    background-color: var(--kruh-accent-dark);
+    border-color: var(--kruh-accent-dark);
+}
+
+.btn--gray {
+    background-color: var(--kruh-gray-600);
+    border-color: var(--kruh-gray-600);
+}
+
+.btn--gray:hover {
+    background-color: var(--kruh-gray-700);
+    border-color: var(--kruh-gray-700);
+}
+
+.btn--large {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+}
+
+.btn--small {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+}
+
+.btn--salmon {
+    background-color: var(--kruh-salmon);
+    border-color: var(--kruh-salmon);
+}
+
+.btn--salmon:hover {
+    background-color: var(--kruh-salmon-dark);
+    border-color: var(--kruh-salmon-dark);
+}
+
+/* === HNUTÍ KRUH NAVBAR === */
+.navbar {
+    background-color: var(--kruh-salmon);
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.25rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.navbar__brand:hover {
+    color: var(--kruh-gray-100);
+    text-decoration: none;
+}
+
+.navbar__brand-logo {
+    height: 2rem;
+    width: auto;
+    margin-right: 0.75rem;
+}
+
+.navbar__nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar__nav-item {
+    margin: 0;
+}
+
+.navbar__nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: color 0.2s ease-in-out;
+    position: relative;
+}
+
+.navbar__nav-link:hover {
+    color: var(--kruh-gray-100);
+    text-decoration: none;
+}
+
+.navbar__nav-link--active {
+    color: #ffffff;
+}
+
+.navbar__nav-link--active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 1px;
+}
+
+.navbar__toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.25rem;
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Responzivní navbar */
+@media (max-width: 768px) {
+    .navbar__nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--kruh-salmon);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+        gap: 0;
+    }
+
+    .navbar__nav--open {
+        display: flex;
+    }
+
+    .navbar__nav-item {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar__nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .navbar__nav-link {
+        display: block;
+        padding: 1rem 0;
+        width: 100%;
+    }
+
+    .navbar__toggle {
+        display: block;
+    }
+
+    .navbar__container {
+        position: relative;
+    }
+}
+
+/* === HNUTÍ KRUH CONTAINER SYSTEM === */
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.container--default {
+    position: relative;
+    background-color: var(--kruh-bg-primary);
+}
+
+.container--accent {
+    background-color: var(--kruh-bg-secondary);
+}
+
+/* === HNUTÍ KRUH CARD COMPONENT === */
+.card {
+    background-color: var(--kruh-bg-primary);
+    border: 1px solid var(--kruh-gray-200);
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card__body {
+    padding: 1.5rem;
+}
+
+.card__header {
+    padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.card__footer {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 576px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 992px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media (min-width: 1366px) {
+    .container {
+        max-width: 1366px;
+    }
+}
+
+/* === LINKS === */
+a {
+    color: var(--kruh-primary);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: var(--kruh-primary-dark);
+    text-decoration: underline;
+}
+
+/* === FORM ELEMENTS === */
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    border: 2px solid var(--kruh-gray-300);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: var(--kruh-bg-primary);
+    color: var(--kruh-text-primary);
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--kruh-primary);
+    box-shadow: 0 0 0 3px rgba(43, 87, 151, 0.1);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--kruh-text-muted);
+}
+
+/* === OVERFLOW UTILITIES === */
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-visible {
+    overflow: visible;
+}
+
+.overflow-scroll {
+    overflow: scroll;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+.overflow-y-hidden {
+    overflow-y: hidden;
+}
+
+.overflow-x-scroll {
+    overflow-x: scroll;
+}
+
+.overflow-y-scroll {
+    overflow-y: scroll;
+}
+
+.overflow-x-auto {
+    overflow-x: auto;
+}
+
+.overflow-y-auto {
+    overflow-y: auto;
+}
+
+/* === WHITESPACE UTILITIES === */
+.whitespace-normal {
+    white-space: normal;
+}
+
+.whitespace-nowrap {
+    white-space: nowrap;
+}
+
+.whitespace-pre {
+    white-space: pre;
+}
+
+.whitespace-pre-line {
+    white-space: pre-line;
+}
+
+.whitespace-pre-wrap {
+    white-space: pre-wrap;
+}
+
+/* === BREAK UTILITIES === */
+.break-normal {
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+.break-words {
+    overflow-wrap: break-word;
+}
+
+.break-all {
+    word-break: break-all;
+}
+
+/* === RESPONSIVE UTILITIES === */
+@media (min-width: 576px) {
+    .sm\:block {
+        display: block;
+    }
+
+    .sm\:hidden {
+        display: none;
+    }
+
+    .sm\:flex {
+        display: flex;
+    }
+}
+
+@media (min-width: 768px) {
+    .md\:block {
+        display: block;
+    }
+
+    .md\:hidden {
+        display: none;
+    }
+
+    .md\:flex {
+        display: flex;
+    }
+
+    .md\:grid {
+        display: grid;
+    }
+
+    .md\:text-lg {
+        font-size: 1.125rem;
+    }
+
+    .md\:text-xl {
+        font-size: 1.25rem;
+    }
+
+    .md\:gap-5 {
+        gap: 1.25rem;
+    }
+
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .md\:col-span-1 {
+        grid-column: span 1 / span 1;
+    }
+}
+
+@media (min-width: 992px) {
+    .lg\:block {
+        display: block;
+    }
+
+    .lg\:hidden {
+        display: none;
+    }
+
+    .lg\:flex {
+        display: flex;
+    }
+
+    .lg\:text-xl {
+        font-size: 1.25rem;
+    }
+
+    .lg\:text-2xl {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .xl\:block {
+        display: block;
+    }
+
+    .xl\:hidden {
+        display: none;
+    }
+
+    .xl\:flex {
+        display: flex;
+    }
+}
+
+/* === VUE.JS SPECIFIC === */
+[v-cloak] {
+    display: none;
+}
+
+/* === APPLICATION SPECIFIC === */
+#app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--kruh-bg-primary);
+    color: var(--kruh-text-primary);
+}
+
+/* === HNUTÍ KRUH UTILITY CLASSES === */
+.kruh-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.kruh-shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.kruh-gradient {
+    background: linear-gradient(135deg, var(--kruh-primary) 0%, var(--kruh-primary-light) 100%);
+}
+
+.kruh-border-accent {
+    border-left: 4px solid var(--kruh-accent);
+}
+
+.kruh-section {
+    padding: 3rem 0;
+}
+
+.kruh-section--accent {
+    background-color: var(--kruh-bg-secondary);
+}
+
+/* === ACCESSIBILITY === */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* === FOCUS STYLES === */
+*:focus-visible {
+    outline: 2px solid var(--kruh-primary);
+    outline-offset: 2px;
+}
