@@ -66,9 +66,15 @@ Po deployu:
 
 ## Troubleshooting
 
+### Build selhává s "npm ci" chybou
+- **Problém**: `npm ci` selhává s exit code 1
+- **Řešení**: Ujistěte se, že `package-lock.json` je commitnutý do repository
+- **Příkaz**: Spusťte `npm install` lokálně a commitněte vytvořený `package-lock.json`
+
 ### Build selhává
 - Zkontrolujte, že všechny závislosti jsou v `package.json`
 - Ujistěte se, že `npm run build` funguje lokálně
+- Ověřte, že `package-lock.json` je v repository (ne v .gitignore)
 
 ### Container se nespustí
 - Zkontrolujte logy kontejneru v Portainer

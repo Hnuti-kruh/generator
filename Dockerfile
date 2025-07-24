@@ -1,13 +1,16 @@
 # Multi-stage build pro Vue aplikaci
 FROM node:18-alpine AS build-stage
 
+# Instalace git (může být potřeba pro některé npm packages)
+RUN apk add --no-cache git
+
 # Nastavení pracovního adresáře
 WORKDIR /app
 
-# Kopírování package.json a package-lock.json (pokud existuje)
+# Kopírování package.json a package-lock.json
 COPY package*.json ./
 
-# Instalace závislostí (včetně dev dependencies pro build)
+# Instalace závislostí
 RUN npm ci
 
 # Kopírování zdrojového kódu
