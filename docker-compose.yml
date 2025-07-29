@@ -3,21 +3,19 @@ version: '3.8'
 services:
   graphics-generator:
     build:
-      context: .
+      context: "https://github.com/Hnuti-kruh/generator.git#main"
       dockerfile: Dockerfile
     container_name: graphics-generator-app
     restart: unless-stopped
     expose:
-      - "3000"  # Exponujeme port 3000 pro nginx-proxy (serve default port)
+      - "3000"
     environment:
-      - NODE_ENV=production
-      # --- proxy nastavení ---
-      - VIRTUAL_HOST=generator.hnutikruh.cz
-      - VIRTUAL_PORT=3000
-      - VIRTUAL_PROTO=http
-      # Pokud používáte letsencrypt companion:
-      - LETSENCRYPT_HOST=generator.hnutikruh.cz
-      - LETSENCRYPT_EMAIL=mtk@hnutikruh.cz
+      NODE_ENV: production
+      VIRTUAL_HOST: generator.hnutikruh.cz
+      VIRTUAL_PORT: 3000
+      VIRTUAL_PROTO: http
+      LETSENCRYPT_HOST: generator.hnutikruh.cz
+      LETSENCRYPT_EMAIL: mtk@hnutikruh.cz
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000"]
       interval: 30s
@@ -31,5 +29,5 @@ services:
 networks:
   internal:
   nginx-proxy:
-    name: nginx-proxy
     external: true
+    name: nginx-proxy
