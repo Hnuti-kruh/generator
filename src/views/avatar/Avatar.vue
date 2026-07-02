@@ -12,6 +12,8 @@ import AutoReloadCheckbox from "../../components/reload/AutoReloadCheckbox.vue";
 import OverlaySelect from "./OverlaySelect.vue";
 
 import overlayImage1 from "../../assets/template/avatar/overlay.png";
+import overlayImage2 from "../../assets/template/avatar/overlay_NIKDO_STRANOU.png";
+import overlayImage3 from "../../assets/template/avatar/overlay_TADY_JSME.png";
 
 import { toRawDeep } from "../../utils";
 </script>
@@ -29,6 +31,14 @@ export default {
       overlay1: {
         title: "Kolečko",
         overlayImage: overlayImage1,
+      },
+      overlay2: {
+        title: "Nikdo stranou",
+        overlayImage: overlayImage2,
+      },
+      overlay3: {
+        title: "Tady jsme",
+        overlayImage: overlayImage3,
       },
     };
 
