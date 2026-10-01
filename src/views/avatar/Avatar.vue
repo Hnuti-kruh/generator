@@ -14,6 +14,7 @@ import OverlaySelect from "./OverlaySelect.vue";
 import overlayImage1 from "../../assets/template/avatar/overlay.png";
 import overlayImage2 from "../../assets/template/avatar/overlay_NIKDO_STRANOU.png";
 import overlayImage3 from "../../assets/template/avatar/overlay_TADY_JSME.png";
+import overlayImage4 from "../../assets/template/avatar/ramecek_Veronika_senat.png";
 
 import { toRawDeep } from "../../utils";
 </script>
@@ -39,6 +40,10 @@ export default {
       overlay3: {
         title: "Tady jsme",
         overlayImage: overlayImage3,
+      },
+      overlay4: {
+        title: "Veronika do Senátu",
+        overlayImage: overlayImage4,
       },
     };
 
