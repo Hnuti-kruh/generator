@@ -1,0 +1,4 @@
+# Preparation only. Do not add until a separate generator migration is approved.
+generator.hnutikruh.cz {
+    reverse_proxy kruh-generator:8080
+}

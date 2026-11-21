@@ -8,9 +8,10 @@ dist/
 .env
 .env.local
 .env.production
+.env.*
+!.env.example
 
 # Docker
-.dockerignore
 
 # IDE
 .vscode/
